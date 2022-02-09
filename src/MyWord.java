@@ -10,7 +10,9 @@ public class MyWord {
     }
 
     public void setLetterOfWord(char letter, int letterPosition) {
+        word.deleteCharAt(letterPosition);
         word.insert(letterPosition, letter);
+
     }
 
 

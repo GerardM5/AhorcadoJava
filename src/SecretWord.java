@@ -1,5 +1,5 @@
 public class SecretWord {
-    public static final String[] WORDS = new String[]{"Tobillo", "Juego", "Eje", "Escritura", "Diputados", "Genio", "Cepo", "Manta", "Coma", "Borla"};
+    public static final String[] WORDS = new String[]{"tobillo", "juego", "eje", "escritura", "diputados", "genio", "cepo", "manta", "coma", "borla"};
     private String word = "";
 
     public SecretWord() {
