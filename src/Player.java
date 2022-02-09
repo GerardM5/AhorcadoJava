@@ -1,12 +1,12 @@
 public class Player {
-    private String name;
+    private final String NAME;
     private int numAttempts;
     private char letter;
     private boolean playing = true;
     private boolean win = false;
 
     public Player(String name, int numAttempts) {
-        this.name = name;
+        this.NAME = name;
         this.numAttempts = numAttempts;
     }
 
@@ -19,20 +19,9 @@ public class Player {
         this.letter = letter.charAt(0);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getNumAttempts() {
         return numAttempts;
-    }
-
-    public void setNumAttempts(int numAttempts) {
-        this.numAttempts = numAttempts;
     }
 
     public void sumAttempts() {
@@ -53,5 +42,9 @@ public class Player {
 
     public void setWin(boolean win) {
         this.win = win;
+    }
+
+    public String getName() {
+        return NAME;
     }
 }

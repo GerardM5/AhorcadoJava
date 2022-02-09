@@ -6,9 +6,7 @@ public class Main {
         Player player1 = new Player(askForName(), 0);
         SecretWord secret = new SecretWord();
         MyWord myWord = new MyWord(secret.getWord());
-        while (player1.isPlaying()) {
-            playGame(myWord,player1,secret);
-        }
+        while (player1.isPlaying()) playGame(myWord, player1, secret);
         printResult(secret, player1);
     }
 
@@ -20,15 +18,20 @@ public class Main {
     }
 
     private static void printResult(SecretWord secret, Player player1) {
-        if (player1.isWin()) System.out.println("HAS GANADO");
+        if (player1.isWin()) System.out.println("HAS GANADO ");
         else System.out.println("HAS PERDIDO");
-        System.out.println("La palabra correcta era " + secret.getWord());
+        System.out.println("La palabra correcta era " + secret.getWord() + ", lo has conseguido " + player1.getName());
     }
 
     private static void checkIfPlayerContinue(MyWord myWord, SecretWord secret, Player player1) {
         if (myWord.getWord().toString().equalsIgnoreCase(secret.getWord()) || player1.getNumAttempts() == 5) {
             player1.setPlaying(false);
+            checkIfPlayerWin(player1, secret, myWord);
         }
+    }
+
+    private static void checkIfPlayerWin(Player player1, SecretWord secret, MyWord myWord) {
+        if (myWord.getWord().toString().equalsIgnoreCase(secret.getWord())) player1.setWin(true);
     }
 
     private static void checkLetter(MyWord myWord, SecretWord secret, Player player1) {
@@ -39,7 +42,7 @@ public class Main {
                 isCorrect = true;
             }
         }
-        if(isCorrect==false) player1.sumAttempts();
+        if (!isCorrect) player1.sumAttempts();
     }
 
     private static void chooseLetter(Player player1) {
