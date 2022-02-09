@@ -1,19 +1,18 @@
 public class MyWord {
-    String word = "";// StringBuilder
+    StringBuilder word = new StringBuilder();
 
     public MyWord(String word) {
         for (int i = 0; i < word.length(); i++) {
-            this.word += "_";
+            this.word.append('_');
         }
     }
 
-    public String getWord() {
+    public StringBuilder getWord() {
         return word;
     }
 
-    public String setLetterOfWord(char letter, int letterPosition) {
-        word.
-                word.charAt(letterPosition) = letter;
+    public StringBuilder setLetterOfWord(char letter, int letterPosition) {
+            word.insert(letterPosition, letter);
         return word;
     }
 

@@ -4,8 +4,8 @@ public class SecretWord {
     public static final String[] WORDS = new String[]{"Tobillo", "Juego", "Eje", "Escritura", "Diputados", "Genio", "Cepo", "Manta", "Coma", "Borla"};
     private String word = "";
 
-    public SecretWord(String word) {
-        this.word = word;
+    public SecretWord() {
+        this.word = getRandom(SecretWord.WORDS);
     }
 
     public String getRandom(String [] words){
